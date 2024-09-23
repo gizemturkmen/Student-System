@@ -1,0 +1,36 @@
+﻿@page
+@model ogrenciSistemi.Pages.Ders.IndexDersModel
+@{
+}
+
+<br />
+<h2>Ders Listesi</h2>
+<a class='btn btn-primary btn-sm' href='/Ders/CreateDers'>Yeni Ders</a>
+<table class="table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>DersKodu</th>
+            <th>DersAdı</th>
+            <th>AKTS</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.listDers)
+        {
+            <tr>
+                <td>@item.id</td>
+                <td>@item.DersKodu</td>
+                <td>@item.DersAdı</td>
+                <td>@item.AKTS</td>
+                <td>
+                    <a class="btn btn-primary btn-sm" href="/Ders/Edit?id=@item.id">Düzenle</a>
+                    <a class="btn btn-danger btn-sm" href="/Ders/Delete?id=@item.id">Sil</a>
+                </td>
+            </tr>
+        }
+
+
+    </tbody>
+</table>

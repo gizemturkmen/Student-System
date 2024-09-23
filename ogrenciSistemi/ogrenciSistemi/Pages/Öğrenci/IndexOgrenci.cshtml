@@ -1,0 +1,39 @@
+﻿@page
+@model ogrenciSistemi.Pages.Öğrenci.IndexOgrenciModel
+@{
+}
+
+
+<br>
+<h2>Öğrenci Listesi</h2>
+<a class='btn btn-primary btn-sm' href='/Öğrenci/CreateOgrenci'>Yeni Öğrenci</a>
+<table class="table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>ÖğrenciNo</th>
+            <th>İsim</th>
+            <th>Cinsiyet</th>
+            <th>Bölüm</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.listOgrenci)
+        {
+            <tr>
+                <td>@item.id</td>
+                <td>@item.ÖğrenciNo</td>
+                <td>@item.İsim</td>
+                <td>@item.Cinsiyet</td>
+                <td>@item.Bölüm</td>
+                <td>
+                    <a class="btn btn-primary btn-sm" href="/Öğrenci/Edit?id=@item.id">Düzenle</a>
+                    <a class="btn btn-danger btn-sm" href="/Öğrenci/Delete?id=@item.id">Sil</a>
+                </td>
+            </tr>
+        }
+
+    </tbody>
+</table>
+

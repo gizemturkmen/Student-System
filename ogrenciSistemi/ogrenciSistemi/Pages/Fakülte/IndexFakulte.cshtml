@@ -1,0 +1,34 @@
+﻿@page
+@model ogrenciSistemi.Pages.Fakülte.IndexFakulteModel
+@{
+}
+
+<br />
+<h2>Fakülte Listesi</h2>
+<a class='btn btn-primary btn-sm' href='/Fakülte/CreateFakulte'>Yeni Fakülte</a>
+<table class="table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>FakülteKodu</th>
+            <th>FakülteAdı</th>
+            <th>BölümSayısı</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.listFakulte)
+        {
+            <tr>
+                <td>@item.id</td>
+                <td>@item.FakülteKodu</td>
+                <td>@item.FakülteAdı</td>
+                <td>@item.BölümSayısı</td>
+                <td>
+                    <a class="btn btn-primary btn-sm" href="/Fakülte/Edit?id=@item.id">Düzenle</a>
+                    <a class="btn btn-danger btn-sm" href="/Fakülte/Delete?id=@item.id">Sil</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

@@ -1,0 +1,32 @@
+﻿@page
+@model ogrenciSistemi.Pages.Bölüm.IndexBolumModel
+@{
+}
+
+<br />
+<h2>Bölüm Listesi</h2>
+<a class='btn btn-primary btn-sm' href='/Bölüm/CreateBolum'>Yeni Bölüm</a>
+<table class="table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>BölümKodu</th>
+            <th>BölümAdı</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.listBolum)
+        {
+            <tr>
+                <td>@item.id</td>
+                <td>@item.BölümKodu</td>
+                <td>@item.BölümAdı</td>
+                <td>
+                    <a class="btn btn-primary btn-sm" href="/Bölüm/Edit?id=@item.id">Düzenle</a>
+                    <a class="btn btn-danger btn-sm" href="/Bölüm/Delete?id=@item.id">Sil</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
